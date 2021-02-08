@@ -1,8 +1,16 @@
-import Page from "./Component";
+import { useState } from "react";
+import Coba from "./components/Coba";
 
 function App() {
-  // return <div>Halo dunia</div>;
-  return <Page />;
+  const [tampil, setTampil] = useState(false);
+
+  return (
+    <div>
+      {tampil && <Coba />}
+      <button onClick={() => setTampil(true)}>tampil</button>
+      <button onClick={() => setTampil(false)}>hidden</button>
+    </div>
+  );
 }
 
 export default App;
