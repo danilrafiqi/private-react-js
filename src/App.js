@@ -1,14 +1,13 @@
-import { useState } from "react";
-import Coba from "./components/Coba";
+import BelajarForm from "./components/BelajarForm";
 
 function App() {
-  const [tampil, setTampil] = useState(false);
-
   return (
-    <div>
-      {tampil && <Coba />}
-      <button onClick={() => setTampil(true)}>tampil</button>
-      <button onClick={() => setTampil(false)}>hidden</button>
+    <div
+      style={{
+        marginTop: 50,
+      }}
+    >
+      <BelajarForm />
     </div>
   );
 }
