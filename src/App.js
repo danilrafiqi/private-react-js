@@ -1,15 +1,7 @@
-import BelajarForm from "./components/BelajarForm";
+import Todo from "./containers/Todo/Todo";
 
 function App() {
-  return (
-    <div
-      style={{
-        marginTop: 50,
-      }}
-    >
-      <BelajarForm />
-    </div>
-  );
+  return <Todo />;
 }
 
 export default App;
