@@ -1,7 +1,6 @@
-import Todo from "./containers/Todo/Todo";
-
+import TodoList from "./containers/TodoList";
 function App() {
-  return <Todo />;
+  return <TodoList />;
 }
 
 export default App;
