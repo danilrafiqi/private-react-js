@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./Todo.css";
+
 export default function Todo() {
-  const [todos, setTodos] = useState(["Belajar react", "Membaca"]);
+  const [todos, setTodos] = useState([
+    "Belajar react",
+    "Membaca",
+    "menulis",
+    "makan",
+    "minum",
+  ]);
   const [task, setTask] = useState("");
   const [isEdit, setIsEdit] = useState(false);
   const [todoIdx, setTodoIdx] = useState(0);
+
+  const history = useHistory();
+  window.document.title = "todo";
+
   return (
     <div className="todo">
       <div className="todo__wrapper">
@@ -67,6 +80,28 @@ export default function Todo() {
                   <div className="todo__list__content__title">{v}</div>
                 </div>
                 <div>
+                  <Link
+                    to={{
+                      pathname: "/todo-detail",
+                      state: {
+                        id: i,
+                      },
+                    }}
+                  >
+                    Link
+                  </Link>
+                  <button
+                    onClick={() =>
+                      history.push("/todo-detail", {
+                        id: i,
+                      })
+                    }
+                  >
+                    State
+                  </button>
+                  <button onClick={() => history.push("/todo/" + i)}>
+                    Detail
+                  </button>
                   <button
                     onClick={() => {
                       setIsEdit(true);

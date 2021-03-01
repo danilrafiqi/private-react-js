@@ -1,0 +1,5 @@
+.home {
+  &__button {
+    border-radius: unset;
+  }
+}
